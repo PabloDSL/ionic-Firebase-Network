@@ -1,0 +1,58 @@
+<form [formGroup]="formularioRegistro">
+  
+  <!-- Nombre de la persona -->
+  <ion-item>
+    <ion-input type="text" formControlName="name" placeholder="Nombre"></ion-input>
+    <span *ngIf="formularioRegistro.get('name').touched && formularioRegistro.get('name').hasError('required')">Required</span> 
+  </ion-item>
+  
+  <!-- Edad -->
+  <ion-item>
+    <ion-input type="number" formControlName="age" placeholder="Edad"></ion-input>
+    <span *ngIf="formularioRegistro.get('age').touched && formularioRegistro.get('age').hasError('required')">Required</span> 
+  </ion-item>
+  
+  
+  <!-- Item de las ciudades más importantes -->
+  <ion-item>
+    <ion-label>Ciudad</ion-label>
+    <ion-select formControlName="city" placeholder="Seleccione">
+      <ion-select-option name="villaflores" value="villaflores">Villaflores</ion-select-option>
+      <ion-select-option name="suchiapa" value="Suchiapa">suchiapa</ion-select-option>
+      <ion-select-option name="villacorzo" value="villacorzo">Villacorzo</ion-select-option>
+      <ion-select-option name="tuxtla" value="tuxtla">Tuxtla Gutiérrez</ion-select-option>
+      <ion-select-option name="cdmx" value="Ciudad de México">CDMX</ion-select-option>
+      <ion-select-option name="guadalajara" value="Guadalajara">Guadalajara</ion-select-option>
+      <ion-select-option name="monterrey" value="Monterrey">Monterrey</ion-select-option>
+    </ion-select>
+    <br>  
+  </ion-item>
+
+  <!-- Item de las ocupaciones más populares -->
+
+  <ion-item>
+    <ion-label>Ocupacion</ion-label>
+    <ion-select formControlName="ocupation" placeholder="Seleccione">
+      <ion-select-option name="student" value="Estudiante">Estudiante</ion-select-option>
+      <ion-select-option name="worker" value="Empleado">Empleado</ion-select-option>
+      <ion-select-option name="unemployed" value="Desempleado">Desempleado</ion-select-option>
+      <ion-select-option name="housewife" value="Ama de casa">Ama(o) de casa</ion-select-option>
+    </ion-select>
+    <br>  
+  </ion-item>
+
+  <!-- Item de los sexos más populares o generos? -->
+  <ion-item>
+    <ion-label>Sexo</ion-label>
+    <ion-select formControlName="gender" placeholder="Seleccione">
+      <ion-select-option name="Male" value="Masculino">Masculino</ion-select-option>
+      <ion-select-option name="Female" value="Femenino">Femenino</ion-select-option>
+      <ion-select-option name="another" value="otro">Otro</ion-select-option>
+      <ion-select-option name="chopter" value="Helicoptero de combate">Helicoptero Boeing AH-64 Apache</ion-select-option>
+      <ion-select-option name="ninguno" value="ninguno">Ninguno</ion-select-option>
+    </ion-select>
+    <br>  
+  </ion-item>
+
+<ion-button type="button" (click)="crearRegistro()" [disabled]="formularioRegistro.invalid">Crear</ion-button>
+</form>
